@@ -20,15 +20,17 @@ class MainActivity : AppCompatActivity() {
         //mapViewModel.getSmokePlaces()
         val button: Button = findViewById(R.id.testButton)
         val textView: TextView = findViewById(R.id.textvvv)
-        button.setOnClickListener {
-            mapViewModel.getSmokePlaces()
+        mapViewModel.smokePlaces.observe(this){
+            Log.d("smokePlaces observe", "")
             var names = ""
-            for(entity in mapViewModel.smokePlaces){
-                Log.d("Tag", entity.areaName)
+            for(entity in it){
+                Log.d("smokePlaces observe", entity.areaName)
                 names = names.plus(entity.areaName)
             }
-            Log.d("Tag", names)
             textView.text = names
+        }
+        button.setOnClickListener {
+            mapViewModel.getSmokePlaces()
         }
     }
 }
