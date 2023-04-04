@@ -2,8 +2,6 @@ package com.example.aid
 
 import org.junit.Test
 
-import org.junit.Assert.*
-
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
@@ -12,6 +10,27 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+//        val retrofit = HospitalClient.getInstance()
+//
+//        val service = retrofit.create(HospitalApi::class.java)
+//
+//        service.getAllHospitals()
+//            .enqueue(object: Callback<GwangDto> {
+//                override fun onResponse(
+//                    call: Call<GwangDto>,
+//                    response: Response<GwangDto>
+//                ) {
+//                    Log.d("YMC", "onResponse 성공: ${response.body()?.id}");
+//                }
+//
+//                override fun onFailure(
+//                    call: Call<GwangDto>,
+//                    t: Throwable
+//                ) {
+//                    Log.d("YMC", "onFailure 에러: " + t.message.toString());
+//                }
+//
+//            })
+//        print("123")
     }
 }
