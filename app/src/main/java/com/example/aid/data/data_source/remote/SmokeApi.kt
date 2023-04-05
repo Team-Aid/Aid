@@ -8,5 +8,5 @@ private const val apiKey: String = "iqsfQNfPIs8JsmMOXxBztm%2B4GmUT%2BqCgf7kQkc0x
 
 interface SmokeApi {
     @GET("getSmkAreaList?type=json&serviceKey=$apiKey&pageNo=1&numOfRows=500&id=")
-    fun getAllHospitals(): Call<GwangDtoX>
+    fun getAllSmokePlaces(): Call<GwangDtoX>
 }
