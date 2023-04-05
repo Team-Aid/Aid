@@ -13,11 +13,12 @@ import kotlinx.coroutines.launch
 
 class MapViewModel(private val repository: SmokePlaceRepository) : ViewModel() {
     var smokePlaces: LiveData<List<SmokePlaceEntity>> = repository.smokePlaces.asLiveData()
+        private set
 
     fun getSmokePlaces() =
         CoroutineScope(Dispatchers.IO).launch {
             repository.getAllSmokePlaceEntity()
-            Log.d("getSmokePlaces", smokePlaces.value?.size.toString())
+            Log.d("MapViewModel:", " getSmokePlaces - " + smokePlaces.value?.size.toString())
         }
 
 }

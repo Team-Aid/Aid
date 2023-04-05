@@ -24,7 +24,7 @@ class SmokePlaceRepository(private val smokePlaceDao: SmokePlaceDao) {
         val retrofit = SmokeClient.getInstance()
         val service = retrofit.create(SmokeApi::class.java)
         withContext(CoroutineScope(Dispatchers.IO).coroutineContext) {
-            service.getAllHospitals()
+            service.getAllSmokePlaces()
                 .enqueue(object : Callback<GwangDtoX> {
                     override fun onResponse(
                         call: Call<GwangDtoX>,
